@@ -6,7 +6,7 @@
   <title>Tamagochi</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onclick="document.getElementById('muziek').play()">
   <div class="device">
     <div class="screen">
       <div class="air"></div>
@@ -33,13 +33,39 @@
 
       </div>
     </div>
-        <div class="buttons">
-           <div class="health">Leven 100</div>
-           <div class="food">Honger 100</div>
-           <div class="sleep">Slaap 100</div>
+<div class="stats-container">
+
+  <div class="stat">
+    <button onclick="feed()" class="stat-btn">Honger</button>
+    <div class="bar-container">
+      <div id="honger-bar" class="bar"></div>
     </div>
+    <span id="honger-value" class="stat-value">100</span>
   </div>
-  
-  
+
+  <div class="stat">
+    <button onclick="sleepPet()" class="stat-btn">Slaap</button>
+    <div class="bar-container">
+      <div id="slaap-bar" class="bar"></div>
+    </div>
+    <span id="slaap-value" class="stat-value">100</span>
+  </div>
+
+  <div class="stat">
+    <button onclick="play()" class="stat-btn">Plezier</button>
+    <div class="bar-container">
+      <div id="plezier-bar" class="bar"></div>
+    </div>
+    <span id="plezier-value" class="stat-value">100</span>
+  </div>
+
+</div>
+
+
+<audio id="muziek" loop>
+  <source src="2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" type="audio/mpeg">
+</audio>
+
+  <script src="script.js"></script>
 </body>
-</html>
+</html> 
