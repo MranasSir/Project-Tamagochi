@@ -99,7 +99,7 @@ canvas {
 .warning {
   display: none;
 }
-#text-honger, #text-slaap, #text-plezier {
+#emotie {
   position: absolute;
   top: 100px;
   left: 220px;

@@ -2,6 +2,13 @@ let honger = 100;
 let slaap = 100;
 let plezier = 100;
 
+
+const gedachten = [
+  " Ik heb Honger!",
+  " Ik wil slapen!",
+  " Ik wil plezier!"
+];
+
 // store interval so we can stop it
 let gameInterval;
 
@@ -40,6 +47,26 @@ function checkGameOver() {
   }
 }
 
+// functie die dominante emotie bepaalt
+function bepaalEmotie() {
+  if (honger <= 30) return 0; 
+  if (slaap <= 30) return 1;  
+  if (plezier <= 30) return 2; 
+  return -1;
+}
+
+// functie om de emotie in HTML te tonen
+function toonEmotie() {
+  const emotieIndex = bepaalEmotie();
+  const el = document.getElementById("emotie");
+  el.innerText = gedachten[emotieIndex];
+  el.style.display = "block";
+  if (emotieIndex === -1) {
+    el.style.display = "none";
+  }
+}
+
+
 /* ==========================
    GAME LOOP (EVERY 10 SECONDS)
    ========================== */
@@ -59,12 +86,13 @@ gameInterval = setInterval(() => {
   }, 2000);
 }
 
-if (honger <= 30) showWarning("text-honger");
-if (slaap <= 30) showWarning("text-slaap");
-if (plezier <= 30) showWarning("text-plezier");
+//if (honger <= 30) showWarning("text-honger");
+//if (slaap <= 30) showWarning("text-slaap");
+//if (plezier <= 30) showWarning("text-plezier");
 
 
   updateStats();
+  toonEmotie();
   checkGameOver();
 }, 1000);
 
