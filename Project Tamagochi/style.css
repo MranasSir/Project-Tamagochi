@@ -1,70 +1,66 @@
-body {
+  body {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Press Start 2P', monospace;
-  background-color: #ffe5e5;
+  background-color: #0C2B4E;
   color: #fff;
-
 }
+
 .device {
   position: relative;
-  top: 50px;
+  top: 30px;
   width: 500px;
   height: 600px;
   border-radius: 50px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   image-rendering: pixelated;  
-  background: #ffcccc;
+  background-color: #1D546C ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  border: solid 3px #F4F4F4;
 
 }
+
+
 .screen {
-  width: 500px;
+  width: 300px;
   height: 350px;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: solid 3px #1A3D64;
 }
-canvas {
-  display: block;
-  width: 320px;   /* 64 × 5 */
-  height: 320px;
-  image-rendering: pixelated;
-  background-color: #b8d0fd;
-  border-radius: 8px;
-}
-.stat-btn {
+
+#feed-button, #sleep-button, #play-button {
   padding: 15px 20px;
   border-radius: 10px;
   border: none;
-  background-color: #ff7f7f;
+  background-color: #1A3D64;
   box-shadow: 0 4px 6px rgba(0,0,0,0.15);
   cursor: pointer;
   font-weight: bold;
   color: #fff;
     font-family: 'Press Start 2P', monospace;
   }
-  .stat-btn:hover {
-    background-color: #ff4c4c;
+  #feed-button:hover, #sleep-button:hover, #play-button:hover {
+    background-color: #0C2B4E;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
   }
-
-.stat-btn.honger { color: rgb(255,21,21); }
-.stat-btn.slaap { color: rgb(255,140,0); }
-.stat-btn.plezier { color: rgb(138,43,226); }
 
 .stat-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
   margin: 20px;
+  position: relative;
 }
 .stat {
   display: flex;
@@ -96,13 +92,8 @@ canvas {
 }
 
 
-.warning {
-  display: none;
-}
+
 #emotie {
-  position: absolute;
-  top: 100px;
-  left: 220px;
   max-width: 220px;
   padding: 10px 14px;
   background-color: white;
@@ -110,13 +101,30 @@ canvas {
   font-size: 12px;
   border-radius: 16px;
   display: none;
+  position: absolute;
+  top: 20px;
 }
 
-#text-container {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid white;
+.age-container{
+  position: absolute;
+  top: 70%;
+  left: 80%;
 }
+#age{
+  position: relative;
+  left: -15px;
+}
+#age-sub{
+  position: absolute;
+  color: #222;
+  top: 50%;
+  left: 45%;
+}
+#age-text{
+  position: absolute;
+  white-space: nowrap;
+  top: 400px;
+  left: 400px;
+  display: none;
+}
+

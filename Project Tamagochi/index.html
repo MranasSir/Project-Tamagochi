@@ -10,12 +10,13 @@
 <body onclick="document.getElementById('muziek').play()">
   <div class="device">
     <div class="screen">
-     <canvas id="game" width="64" height="64"></canvas>
+      <p id="emotie" class="emotie"></p>
+      <img id="sonic" src="Gifs/normal.gif" alt="Dark-Sonic">
       </div>
 <div class="stats-container">
 
   <div class="stat">
-    <button onclick="feed()" class="stat-btn">Honger</button>
+    <button onclick="button()" id="feed-button">Honger</button>
     <div class="bar-container">
       <div id="honger-bar" class="bar"></div>
     </div>
@@ -23,7 +24,7 @@
   </div>
 
   <div class="stat">
-    <button onclick="sleepPet()" class="stat-btn">Slaap</button>
+    <button onclick="buttons()" id="sleep-button">Slaap</button>
     <div class="bar-container">
       <div id="slaap-bar" class="bar"></div>
     </div>
@@ -31,23 +32,24 @@
   </div>
 
   <div class="stat">
-    <button onclick="play()" class="stat-btn">Plezier</button>
+    <button onclick="buttons()" id="play-button">Plezier</button>
     <div class="bar-container">
       <div id="plezier-bar" class="bar"></div>
     </div>
     <span id="plezier-value" class="stat-value">100</span>
   </div>
-
-</div>
-<div class="text-container">
-  <p id="text-honger" class="warning">Ik heb Honger!</p>
-  <p id="text-slaap" class="warning">Ik wil slapen!</p>
-  <p id="text-plezier" class="warning">Ik wil plezier!</p>
+  
+  <div class="age-container">
+    <p id="age">age:</p>
+    <p id="age-num">0</p>
+  </div>
+  <p id="age-sub">Kid</p>
+  <span id="age-text">You've just Ranked up!</span>
+  
   <p id="emotie" class="emotie"></p>
-</div>
 
 <audio id="muziek" loop>
-  <source src="2020-03-22_-_8_Bit_Surf_-_FesliyanStudios.com_-_David_Renda.mp3" type="audio/mpeg">
+  <source src="Music/1-05. Angel Island Zone - Act 1.mp3" type="audio/mp3">
 </audio>
 
   <script src="script.js"></script>
