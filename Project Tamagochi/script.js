@@ -65,16 +65,24 @@ gameInterval = setInterval(() => {
       CurrentRankText = agesub[0]; 
     } else if ( age >= 20 && age < 60) {
       CurrentRankText = agesub[1];
-      honger -= 2 * 2;
+      honger -= 2 * 3;
+      slaap -= 2 * 3;
+      plezier-= 2 * 3;
 
     } else if ( age >= 60 && age < 100) {
       CurrentRankText = agesub[2];
-      honger -= 2 * 4;
+      honger -= 2 * 5;
+      slaap -= 2 * 5;
+      plezier -= 2 * 5;
     } else if ( age >= 100 && age <300 ) 
       {CurrentRankText = agesub[3]; 
       honger -= 2 * 8;
+      slaap -= 2 * 8;
+      plezier -= 2 * 8;
     } else {CurrentRankText = agesub[4];
       honger -= 2 * 12;
+      slaap -= 2 * 12;
+      plezier -= 2 * 12;
     }
     //age checkpoints einde//
 
