@@ -47,8 +47,12 @@ function bepaalEmotie() {
 
 function toonEmotie(){
   let emotie = document.getElementById("emotie")
+  const emotieimgPlezier = document.getElementById("denkwolk-plezier")
+  let emotieimgHonger = document.getElementById("denkwolk-honger")
+  let emotieimgSlaap = document.getElementById("denkwolk-slaap")
   let index = bepaalEmotie();
-
+  
+  //actie van emotie-teksten//
   if (index === -1) {
     emotie.innerText = "";
     emotie.style.display = "none";
@@ -56,6 +60,22 @@ function toonEmotie(){
     emotie.innerText = emoties[index];
     emotie.style.display = "block";
   }
+  //actie van emotie-teksten einde //
+
+  // Denkwolk-fotos//
+  if (plezier <= 30) {
+    emotieimgPlezier.style.display = "block";
+  } else { emotieimgPlezier.style.display = "none";}
+  if (plezier == 0) { emotieimgPlezier.style.display = "none";}
+  if (slaap <= 30) {
+    emotieimgSlaap.style.display = "block";
+  } else { emotieimgSlaap.style.display = "none";}
+  if (slaap == 0) { emotieimgSlaap.style.display = "none";}
+  if (honger <= 30) {
+    emotieimgHonger.style.display = "block";
+  } else { emotieimgHonger.style.display = "none";}
+  if (honger == 0) { emotieimgHonger.style.display = "none";}
+  // denkwolk-fotos einde//
 }
 
 gameInterval = setInterval(() => {
@@ -93,6 +113,7 @@ gameInterval = setInterval(() => {
 
     setTimeout(() => {
         rankMessage.style.display = "none";
+        emotieimgPlezier.style.display = "none";
     }, 2000);
 
     previousranktext = CurrentRankText;
@@ -112,7 +133,7 @@ gameInterval = setInterval(() => {
     // stats elke seconde omlaag//
     updateStats();
     toonEmotie();
-}, 1000);
+}, 2000);
 
 function GameOver() {
   return honger <= 0 || slaap <= 0 || plezier <= 0;
@@ -129,7 +150,9 @@ document.getElementById("feed-button").onclick = () => {
 
     }
     slaap -= 5 
-      if (slaap <0) slaap = 0;
+   if (slaap <0) slaap = 0;
+    plezier -= 5
+   if (plezier <0) plezier = 0;   
 
     }
      updateStats();
@@ -143,9 +166,10 @@ document.getElementById("sleep-button").onclick = () => {
    
    if (slaap > 100) {
        slaap = 100;
-   }
-       plezier -= 5 
-      if (plezier <0) plezier = 0;
+   }   honger -= 10 
+     if (honger <0) honger = 0;
+       plezier -= 10 
+     if (plezier <0) plezier = 0;
     }
   updateStats();
   toonEmotie();
@@ -159,8 +183,10 @@ document.getElementById("play-button").onclick = () => {
     if ( plezier > 100) {
         plezier = 100
     }
-          slaap -= 5 
+          slaap -= 10 
       if (slaap <0) slaap = 0;
+          honger -= 5
+      if (honger <0) honger = 0;    
     }
 
   updateStats();

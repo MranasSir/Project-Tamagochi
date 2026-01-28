@@ -105,6 +105,13 @@
   top: 20px;
 }
 
+#denkwolk-plezier, #denkwolk-honger, #denkwolk-slaap{
+  display: none;
+  position: absolute;
+  left: 70%;
+  top: -20px;
+}
+
 .age-container{
   position: absolute;
   top: 70%;
