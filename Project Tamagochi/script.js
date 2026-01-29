@@ -5,7 +5,6 @@ let age = 0;
 let CurrentRankText = "kid";
 let previousranktext = "Kid";
 
-
 const emoties = [
   " Ik heb Honger!",
   " Ik wil slapen!",
@@ -133,10 +132,20 @@ gameInterval = setInterval(() => {
     // stats elke seconde omlaag//
     updateStats();
     toonEmotie();
+    ShowGameOver();
 }, 2000);
 
 function GameOver() {
   return honger <= 0 || slaap <= 0 || plezier <= 0;
+}
+
+function ShowGameOver() {
+  const GameOver = document.getElementById("game-over")
+  const sonic = document.getElementById("sonic")
+  if (honger <= 0 || slaap <= 0 || plezier <=0) {
+    GameOver.style.display = "block"
+    sonic.style.display = "none"
+  }
 }
 
 //knop-werk//
